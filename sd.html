@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Team Spyder Scouting</title>
+  <link href="CSS/generalStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="CSS/indexStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id="mainNavigator">
+    <img id="menuBars" src="Images/menuBars.png" onclick="toggleSidebar();">
+    <img id="menuX" src="Images/menuX.png" onclick="toggleSidebar();">
+    
+    <img id="spyderLogo" src="Images/spyderLogo.png">
+
+    <p id="greetingText">Team Spyder Scouting Website</p>
+  </header>
+
+  <div id="sidebarDiv" style="margin-left: -250px;">
+    <p class="sidebarButton">Log in or continue as guest first!</p>
+  </div>
+
+  <div id="mainDiv" class="center">
+    <p id="logInButton" class="logInTypeGroup groupedButtonStart groupedButton" onclick="hideElement('continueAsGuestDiv');toggleElement('logInDiv', 'block');">Log In</p>
+    <p id="continueAsGuestButton" class="logInTypeGroup groupedButtonEnd groupedButton" onclick="hideElement('logInDiv');toggleElement('continueAsGuestDiv', 'block');">Continue As Guest</p>
+  
+    <div id="logInDiv" class="center" style="display: none;">
+      <h1 class="title">LOG IN</h1>
+
+      <p class="inputText">Username</p>
+      <input id="userInputOne" class="inputInput"></input>
+      <h2 id="userInputOneNotif" class="notifText"></h2>
+      
+      <p class="inputText">Password</p>
+      <input id="passwordInput" class="inputInput" type="password"></input>
+      <h2 id="passwordInputNotif" class="notifText"></h2>
+
+      <br>
+      <p id="logInButton" class="noPressButton" onclick="logIn();">Log In</p>
+    </div>
+
+    <div id="continueAsGuestDiv" class="center" style="display: none;">
+      <h1 class="title">CONTINUE AS GUEST</h1>
+
+      <p class="inputText">Passcode</p>
+      <input id="passcodeInput" class="inputInput" type="password"></input>
+      <h2 id="passcodeInputNotif" class="notifText center"></h2>
+      
+      <br>
+      <p id="continueButton" class="noPressButton" onclick="continueAsGuest();">Continue</p>
+    </div>
+  </div>
+  
+  <script src="Scripts/config.js"></script>
+  <script src="Scripts/globalData.js"></script>
+  <script src="Scripts/Functions/navFunctions.js"></script>
+  <script src="Scripts/Functions/buttonFunctions.js"></script>
+  <script src="Scripts/Functions/googleSheetsFunctions.js"></script>
+  <script src="Scripts/Functions/generalFunctions.js"></script>
+  <script src="Scripts/Pages/index.js"></script>
+</body>
+
+</html>

@@ -14,3 +14,27 @@ function toggleElement(elementId, displayType) {
         document.getElementById(elementId).style.display = "none";
     }
 }
+
+function setText(id, text) {
+  document.getElementById(id).innerHTML = text;
+}
+
+async function wait(time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(()=>{
+      resolve();
+      }, time
+    );
+  });
+}
+
+function getOrder(orderNum) {
+  var temp = orderStorage[orderNum];
+  delete orderStorage[orderNum];
+
+  return temp;
+}
+
+function changeScreen(location) {
+  window.location.replace(location);
+}

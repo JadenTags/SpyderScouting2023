@@ -20,44 +20,26 @@
   </header>
 
   <div id="sidebarDiv" style="margin-left: -250px;">
-    <p class="sidebarButton">Log in or continue as guest first!</p>
+    <p id="closestCompText" class="sidebarButton center"></p>
+    <p id="matchStatus" class="sidebarButton center"></p>
+    
+    <p class="sidebarButton center" onclick="changeScreens('../Pages/generalInfo.html');">General Info</p>
+    <p class="sidebarButton center" onclick="changeScreens('../Pages/scoutingForms.html');">Scouting Forms</p>
+    <p class="sidebarButton center" onclick="changeScreens('../Pages/scoutingDisplaysOne.html');">Scouting Displays</p>
+    <p class="sidebarButton center" onclick="changeScreens('../Pages/teamRecruiting.html');">Team Recruiting</p>
+    <p class="sidebarButton center" onclick="changeScreens('../Pages/feedbackForm.html');">Feedback</p>
   </div>
 
   <div id="mainDiv" class="center">
-    <p id="logInButton" class="logInTypeGroup groupedButtonStart groupedButton" onclick="hideElement('continueAsGuestDiv');toggleElement('logInDiv', 'block');">Log In</p>
-    <p id="continueAsGuestButton" class="logInTypeGroup groupedButtonEnd groupedButton" onclick="hideElement('logInDiv');toggleElement('continueAsGuestDiv', 'block');">Continue As Guest</p>
-  
-    <div id="logInDiv" class="center" style="display: none;">
-      <h1 class="title">LOG IN</h1>
-
-      <p class="inputText">Username</p>
-      <input id="userInputOne" class="inputInput"></input>
-      
-      <p class="inputText">Password</p>
-      <input id="passwordInput" class="inputInput" type="password"></input>
-
-      <br>
-      <p id="logInButton" class="noPressButton" onclick="logIn();">Log In</p>
-      <h2 id="notificationTextOne" class="notifText center"></h2>
-    </div>
-
-    <div id="continueAsGuestDiv" class="center" style="display: none;">
-      <h1 class="title">CONTINUE AS GUEST</h1>
-
-      <p class="inputText">Passcode</p>
-      <input id="userInputTwo" class="inputInput" type="password"></input>
-      
-      <br>
-      <p id="continueButton" class="noPressButton" onclick="continueAsGuest();">Continue</p>
-      <h2 id="notificationTextTwo" class="notifText center"></h2>
-    </div>
   </div>
   
   <script src="Scripts/config.js"></script>
   <script src="Scripts/globalData.js"></script>
   <script src="Scripts/Functions/navFunctions.js"></script>
   <script src="Scripts/Functions/buttonFunctions.js"></script>
+  <script src="Scripts/Functions/googleSheetsFunctions.js"></script>
   <script src="Scripts/Functions/generalFunctions.js"></script>
+  <script src="Scripts/Pages/index.js"></script>
 </body>
 
 </html>

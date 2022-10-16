@@ -59,6 +59,14 @@ body {
   background-color: #4e5052;
 }
 
+.notifText {
+  color: #f06767;
+  font-size: 10px;
+  margin: 0;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
 #mainNavigator {
   background-color: #141414;
   height: 40px;
