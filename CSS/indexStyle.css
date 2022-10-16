@@ -1,0 +1,21 @@
+#passwordInput, #userInputTwo {
+    margin: 4px;
+    margin-bottom: 8px;
+}
+
+.inputText {
+    margin-bottom: 0;
+    margin-left: -130px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.inputInput {
+  border-radius: 5px 5px 5px 5px;
+  width: 200px;
+  border: 1px solid #c5c7c5;
+}
+
+#logInDiv, #continueAsGuestDiv {
+    margin-top: 50px;
+}

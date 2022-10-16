@@ -1,0 +1,127 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.sidebarButton {
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0vw;
+  width: 100%;
+  font-size: 15px;
+  font-family: Verdana;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.button, .groupedButton, .noPressButton {
+  display: inline-block;
+  background-color: #141414;
+  color: white;
+  padding: 5px;
+  margin: 0vw;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.title {
+  font-family: Verdana;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.groupedButtonStart {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.groupedButtonEnd {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.selectedButton {
+  color: #141414;
+  background-color: #4e5052;
+}
+
+.selectedButton:hover {
+  background-color: #4e5052;
+}
+
+#mainNavigator {
+  background-color: #141414;
+  height: 40px;
+}
+
+#sidebarDiv {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  border-right: 1px solid #141414;
+  overflow-x: hidden;
+  z-index: 99;
+  transition-duration: 0.5s;
+}
+
+#mainDiv {
+  margin-top: 20px;
+}
+
+#closestCompText, #matchStatus {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  border-bottom: 1px solid #4e5052;
+  display: none;
+}
+
+#menuBars {
+  margin: 10px;
+  height: 20px;
+  transition-duration: 0.3s;
+}
+
+#spyderLogo {
+  margin: 5px;
+  height: 30px;
+}
+
+#menuX {
+  opacity: 0;
+  margin: 10px;
+  margin-left: -35px;
+  height: 20px;
+  transition-duration: 0.3s;
+}
+
+#greetingText {
+  color: white;
+  float: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  margin-top: 12.5px;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
