@@ -38,3 +38,9 @@ function getOrder(orderNum) {
 function changeScreen(location) {
   window.location.replace(location);
 }
+
+async function waitGlobalData() {
+  while (!globalDataStored) {
+    await wait(100);
+  }
+}
