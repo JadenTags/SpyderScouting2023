@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Team Spyder Scouting</title>
+  <link href="../CSS/generalStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <header id="mainNavigator">
+    <img id="menuBars" src="../Images/menuBars.png" onclick="toggleSidebar();">
+    <img id="menuX" src="../Images/menuX.png" onclick="toggleSidebar();">
+    
+    <img id="spyderLogo" src="../Images/spyderLogo.png">
+
+    <p id="greetingText">Team Spyder Scouting Website</p>
+  </header>
+
+  <nav>
+    
+  </nav>
+
+  <div id="sidebarDiv" style="margin-left: -250px;">
+    <p id="closestCompText" class="sidebarButton center"></p>
+    <p id="matchStatus" class="sidebarButton center"></p>
+    
+    <p class="sidebarButton selectedButton center">General Info</p>
+    <p class="sidebarButton center" onclick="changeScreen('scoutingForms.html');">Scouting Forms</p>
+    <p class="sidebarButton center" onclick="changeScreen('scoutingDisplaysOne.html');">Scouting Displays</p>
+    <p class="sidebarButton center" onclick="changeScreen('teamRecruiting.html');">Team Recruiting</p>
+    <p class="sidebarButton center" onclick="changeScreen('feedbackForm.html');">Feedback</p>
+  </div>
+
+  <div id="mainDiv" class="center">
+    <h1 class="title">Welcome</h1>
+
+    <p>Enjoy your stay! Click on the three bars at the top left of the screen to continue.</p>
+  </div>
+  
+  <script src="../Scripts/config.js"></script>
+  <script src="../Scripts/globalData.js"></script>
+  <script src="../Scripts/Functions/generalFunctions.js"></script>
+  <script src="../Scripts/Functions/navFunctions.js"></script>
+  <script src="../Scripts/Functions/buttonFunctions.js"></script>
+  <script src="../Scripts/Functions/tbaFunctions.js"></script>
+  <script src="../Scripts/Functions/googleSheetsFunctions.js"></script>
+  <script src="../Scripts/Functions/globalDataFunctions.js"></script>
+  <script src="../Scripts/greeting.js"></script>
+</body>
+
+</html>

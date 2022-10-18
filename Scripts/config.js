@@ -8,5 +8,5 @@ var config = {
     feedbackGSID: '1dRcoweLtoj_3WwkfyTcLZeeM1eXbYzOqL3v5SDx6U_M',
     matchGSID: '1EyS5XVJtnQsq4N8wv6kC91DbrzBDKiQIqCjVwXtQxDA',
     pitGSID: '17nIqUwNFmR7yCaeMNNzv3oP95C0B_nyGOfT1EaeAPMQ',
-    preGSID: '11gDk29ZE7jqMtRu-JJ2X3pA_gdDqadYCEc2C7o4-SWo',
+    preGSID: '11gDk29ZE7jqMtRu-JJ2X3pA_gdDqadYCEc2C7o4-SWo'
   }
