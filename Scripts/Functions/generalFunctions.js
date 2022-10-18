@@ -40,7 +40,7 @@ function changeScreen(location) {
 }
 
 async function waitGlobalData() {
-  while (!globalDataStored) {
+  while (globalDataStored != "") {
     await wait(100);
   }
 }

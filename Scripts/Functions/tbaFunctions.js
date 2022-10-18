@@ -31,7 +31,7 @@ async function getClosestCompData(teamNum, mainOrderNum) {
   orderStorage[mainOrderNum] = [closestComp, difference];
 }
 
-async function getCurMatchNum(teamNum, eventKey, mainOrderNum) {
+async function getCurMatchNum(eventKey, mainOrderNum) {
   var orderNum = curOrderNum++;
   await getTBAData(tbaApiRoot + "event/" + eventKey + "/matches", orderNum);
   var matches = getOrder(orderNum);

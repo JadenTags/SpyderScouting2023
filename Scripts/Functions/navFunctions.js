@@ -23,7 +23,7 @@ async function changeMatchStatus(curMatch) {
 
     if (!curMatch) {
         orderNum = curOrderNum++;
-        await getCurMatchNum(1622, closestCompData[0].key, orderNum);
+        await getCurMatchNum(closestCompData[0].key, orderNum);
         curMatch = getOrder(orderNum);
     }
 
@@ -61,14 +61,14 @@ async function periodicCheckMatch() {
     await waitGlobalData();
     
     orderNum = curOrderNum++;
-    await getCurMatchNum(1622, closestCompData[0].key, orderNum);
+    await getCurMatchNum(closestCompData[0].key, orderNum);
     var curMatch = getOrder(orderNum);
 
     while (true) {
         await wait(3000);
         
         orderNum = curOrderNum++;
-        await getCurMatchNum(1622, closestCompData[0].key, orderNum);
+        await getCurMatchNum(closestCompData[0].key, orderNum);
         let tempMatch = getOrder(orderNum);
 
         if (curMatch != tempMatch) {

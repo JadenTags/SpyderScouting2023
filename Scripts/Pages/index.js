@@ -33,7 +33,7 @@ async function logIn() {
             setText("passwordInputNotif", "");
             passwordInputElement.style.border = "1px solid black";
 
-            name = userInput.charAt(0).toUpperCase() + userInput.slice(1);
+            sessionStorage.setItem("userName", userInput.charAt(0).toUpperCase() + userInput.slice(1));
             changeScreen("Pages/welcome.html");
         } else if (validUser) {
             setText("passwordInputNotif", "This is not the correct password!");
@@ -62,7 +62,7 @@ async function continueAsGuest() {
     var passcodeInputElement = document.getElementById("passcodeInput");
     if (passcodeInput != "") {
         if (Object.keys(passcodes).includes(passcodeInput)) {
-            name = passcodes[passcodeInput];
+            sessionStorage.setItem("userName", passcodes[passcodeInput]);
             changeScreen("Pages/welcome.html");
         } else {
             setText("passcodeInputNotif", "This is not a valid passcode!");

@@ -10,7 +10,7 @@ function setGreeting() {
       greeting = "Good Evening, ";
     }
   
-    document.getElementById("greetingText").innerHTML = greeting + name;
+    document.getElementById("greetingText").innerHTML = greeting + userName;
   }
   
   setGreeting();

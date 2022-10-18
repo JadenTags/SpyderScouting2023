@@ -13,11 +13,10 @@ var curOrderNum = 0;
 var orderStorage = {};
 
 //GLOBAL DATA VARIABLES
-var name = "";
-var closestCompText;
-var closestCompData;
-var matchStatus;
-var globalDataStored;
+var userName = sessionStorage.getItem("userName");
+var closestCompText = sessionStorage.getItem("closestCompText");
+var closestCompData = JSON.parse(sessionStorage.getItem("closestCompData"));
+var globalDataStored = sessionStorage.getItem("globalDataStored");
 
 //SIMULATION VARIABLES
 var finishedMatches = 0; //DEFAULT = 0
