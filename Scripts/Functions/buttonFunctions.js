@@ -12,11 +12,9 @@ function activateButtons() {
       if (navButton.id.replace("Button", "Div") != div) {
         buttonOnclick += "hideElement('" + div + "');";
       } else {
-        buttonOnclick += "toggleElement('" + div + "', 'block');console.log(document.getElementById('" + div + "').style.display == 'none'); if (document.getElementById('" + div + "').style.display == 'none') {showElement('titleDiv', 'block');};";
+        buttonOnclick += "toggleElement('" + div + "', 'block'); if (document.getElementById('" + div + "').style.display == 'none') {showElement('titleDiv', 'block');} else {hideElement('titleDiv', 'block');};";
       }
-    })
-
-    console.log(buttonOnclick)
+    });
 
     
     navButton.setAttribute("onclick", "toggleButton(\'" + navButton.id + "\', \'" + navButton.getAttribute("class").split(" ")[0] + "\');" + buttonOnclick);
