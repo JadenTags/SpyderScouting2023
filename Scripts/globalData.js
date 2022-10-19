@@ -8,6 +8,7 @@ const feedbackGSID = config["feedbackGSID"];
 const matchGSID = config["matchGSID"];
 const pitGSID = config["pitGSID"];
 const preGSID = config["preGSID"];
+const frcKeyEncoded = config["frcKeyEncoded"];
 
 var curOrderNum = 0;
 var orderStorage = {};
