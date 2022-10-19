@@ -50,6 +50,19 @@ body {
   border-radius: 0px 5px 5px 0px;
 }
 
+.navButton {
+  color: white;
+  font-family: verdana;
+  font-weight: bold;
+  margin: 0vw;
+  padding: 1em;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 12px;
+  flex: 5px;
+  border-radius: 0vw;
+}
+
 .selectedButton {
   color: #141414;
   background-color: #4e5052;
@@ -88,7 +101,24 @@ body {
 }
 
 #mainDiv {
-  margin-top: 20px;
+  margin-top: 50px;
+}
+
+#subNavigator {
+  margin: 0vw;
+  padding: 0vw;
+  padding-top: 0;
+  background-color: #141414;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 40px;
+  height: 30px;
+  width: 100%;
+  z-index: 98;
+  border-top: 1px solid #4e5052;
 }
 
 #closestCompText, #matchStatus {

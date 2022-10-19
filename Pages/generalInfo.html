@@ -18,8 +18,11 @@
     <p id="greetingText">Team Spyder Scouting Website</p>
   </header>
 
-  <nav>
-    
+  <nav id="subNavigator">
+    <p id="compInfoButton" class="navButton groupedButton center" style="flex-basis: 25%">Comp Info</p>
+    <p id="mapButton" class="navButton groupedButton center" style="flex-basis: 25%">Map</p>
+    <p id="matchesButton" class="navButton groupedButton center" style="flex-basis: 25%">Matches</p>
+    <p id="teamInfoButton" class="navButton groupedButton center" style="flex-basis: 25%">Team Info Search</p>
   </nav>
 
   <div id="sidebarDiv" style="margin-left: -250px;">
@@ -34,9 +37,23 @@
   </div>
 
   <div id="mainDiv" class="center">
-    <h1 class="title">General Info</h1>
+    <div id="titleDiv">
+        <h1 class="title">General Info</h1>
 
-    <p>Enjoy your stay! Click on the three bars at the top left of the screen to continue.</p>
+        <p>Enjoy your stay! Click on the three bars at the top left of the screen to continue.</p>
+    </div>
+
+    <div id="compInfoDiv">
+    </div>
+
+    <div id="mapDiv">
+    </div>
+
+    <div id="matchesDiv">
+    </div>
+
+    <div id="teamInfoDiv">
+    </div>
   </div>
   
   <script src="../Scripts/config.js"></script>
