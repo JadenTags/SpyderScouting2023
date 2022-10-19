@@ -10,6 +10,7 @@ var frcHeaders = new Headers({
       method: 'GET',
       headers: frcHeaders
     })
+      .catch(e => console.log(e))
       .then(response => response.json())
       .then(data => console.log(data));
   
