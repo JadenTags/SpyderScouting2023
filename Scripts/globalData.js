@@ -21,4 +21,4 @@ var globalDataStored = sessionStorage.getItem("globalDataStored");
 
 //SIMULATION VARIABLES
 var finishedMatches = 0; //DEFAULT = 0
-var testDate = new Date("2022-03-10"); //DEFAULT = new Date();
+var testDate = new Date("2022-03-8"); //DEFAULT = new Date();

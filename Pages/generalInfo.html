@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Team Spyder Scouting</title>
   <link href="../CSS/generalStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="../CSS/generalInfoStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -19,17 +20,17 @@
   </header>
 
   <nav id="subNavigator">
-    <p id="compInfoButton" class="navButton center" style="flex-basis: 25%">Comp Info</p>
-    <p id="mapButton" class="navButton center" style="flex-basis: 25%">Map</p>
-    <p id="matchesButton" class="navButton center" style="flex-basis: 25%">Matches</p>
-    <p id="teamInfoButton" class="navButton center" style="flex-basis: 25%">Team Info</p>
+    <p id="compInfoButton" class="navButton center" style="flex-basis: 25%" onclick="document.body.style.overflow = 'hidden';">Comp Info</p>
+    <p id="compSiteButton" class="navButton center" style="flex-basis: 25%" onclick="document.body.style.overflow = 'hidden';">Comp Site</p>
+    <p id="matchesButton" class="navButton center" style="flex-basis: 25%" onclick="document.body.style.overflow = 'scroll';">Matches</p>
+    <p id="teamInfoButton" class="navButton center" style="flex-basis: 25%" onclick="document.body.style.overflow = 'hidden';">Team Info</p>
   </nav>
 
   <div id="sidebarDiv" style="margin-left: -250px;">
     <p id="closestCompText" class="sidebarButton center"></p>
     <p id="matchStatus" class="sidebarButton center"></p>
     
-    <p class="sidebarButton selectedButton center">General Info</p>
+    <p id="generalInfoSidebarButton" class="sidebarButton selectedButton center">General Info</p>
     <p class="sidebarButton center" onclick="changeScreen('scoutingForms.html');">Scouting Forms</p>
     <p class="sidebarButton center" onclick="changeScreen('scoutingDisplaysOne.html');">Scouting Displays</p>
     <p class="sidebarButton center" onclick="changeScreen('teamRecruiting.html');">Team Recruiting</p>
@@ -44,15 +45,21 @@
     </div>
 
     <div id="compInfoDiv" style="display: none;">
-        <h1 class="title">Comp Info</h1>
-    </div>
+        <h1 id="compName" class="title"></h1>
+        <a id="compAddress" target="_blank"></a>
+        <p id="compWeek"></p>
+        <p id="compDates"></p>
 
-    <div id="mapDiv" style="display: none;">
         <h1 class="title">Map</h1>
+        <img src="../Images/compMap.jpg">
+    </div>
+    
+    <div id="compSiteDiv" style="margin-top: -10px; display: none;">
+        <iframe id="compWebsite"></iframe>
     </div>
 
     <div id="matchesDiv" style="display: none;">
-        <h1 class="title">Matches</h1>
+        <h1 class="title" onclick="finishedMatches++;">Matches</h1>
     </div>
 
     <div id="teamInfoDiv" style="display: none;">
@@ -65,11 +72,11 @@
   <script src="../Scripts/Functions/generalFunctions.js"></script>
   <script src="../Scripts/Functions/buttonFunctions.js"></script>
   <script src="../Scripts/Functions/tbaFunctions.js"></script>
-  <script src="../Scripts/Functions/frcFunctions.js"></script>
   <script src="../Scripts/Functions/navFunctions.js"></script>
   <script src="../Scripts/Functions/googleSheetsFunctions.js"></script>
   <script src="../Scripts/Functions/globalDataFunctions.js"></script>
   <script src="../Scripts/greeting.js"></script>
+  <script src="../Scripts/Pages/generalInfo.js"></script>
 </body>
 
 </html>

@@ -83,6 +83,9 @@ body {
 #mainNavigator {
   background-color: #141414;
   height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #sidebarDiv {
@@ -101,7 +104,7 @@ body {
 }
 
 #mainDiv {
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 #subNavigator {

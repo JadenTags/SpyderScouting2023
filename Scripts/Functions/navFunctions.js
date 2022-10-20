@@ -23,17 +23,17 @@ async function changeMatchStatus(curMatch) {
 
     if (!curMatch) {
         orderNum = curOrderNum++;
-        await getCurMatchNum(closestCompData[0].key, orderNum);
-        curMatch = getOrder(orderNum);
+        await getCurMatch(closestCompData[0].key, orderNum);
+        curMatch = getOrder(orderNum).match_number;
     }
 
     if (closestCompData) {
         var orderNum = curOrderNum++;
         await getTBAData(tbaApiRoot + "team/frc1622/event/" + closestCompData[0].key + "/matches", orderNum);
-        var matches = getOrder(orderNum);
+        var matches = getOrder(orderNum).sort((a, b) => a.match_number - b.match_number);
         var nextTeamMatch;
         var curParticipant = matches.map(x => x.match_number).includes(curMatch);
-
+        
         matches.forEach(x => {
             if (!nextTeamMatch && x.match_number > curMatch) {
               nextTeamMatch = x.match_number;
@@ -61,15 +61,15 @@ async function periodicCheckMatch() {
     await waitGlobalData();
     
     orderNum = curOrderNum++;
-    await getCurMatchNum(closestCompData[0].key, orderNum);
-    var curMatch = getOrder(orderNum);
+    await getCurMatch(closestCompData[0].key, orderNum);
+    var curMatch = getOrder(orderNum).match_number;
 
     while (true) {
         await wait(3000);
         
         orderNum = curOrderNum++;
-        await getCurMatchNum(closestCompData[0].key, orderNum);
-        let tempMatch = getOrder(orderNum);
+        await getCurMatch(closestCompData[0].key, orderNum);
+        let tempMatch = getOrder(orderNum).match_number;
 
         if (curMatch != tempMatch) {
             curMatch = tempMatch;
@@ -78,6 +78,15 @@ async function periodicCheckMatch() {
     }
 }
 
+async function checkGeneralInfo() {
+    await waitGlobalData();
+
+    if (closestCompData[1] > 0) {
+        document.getElementById("generalInfoSidebarButton").style.display = "none";
+    }
+}
+
 changeCompText();
 changeMatchStatus(null);
+checkGeneralInfo();
 periodicCheckMatch();

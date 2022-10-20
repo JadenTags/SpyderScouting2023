@@ -1,7 +1,6 @@
 var frcHeaders = new Headers({
     "Authorization" : "Basic " + frcKeyEncoded,
-    "Content-Type": "application/json",
-    'Access-Control-Allow-Origin': "*"
+    "Content-Type": "application/json"
   });
   var frcApiRoot = 'https://frc-api.firstinspires.org';
   
@@ -10,8 +9,7 @@ var frcHeaders = new Headers({
       method: 'GET',
       headers: frcHeaders
     })
-      .catch(e => console.log(e))
-      .then(response => response.json())
+      .then(response => console.log(response.json()))
       .then(data => console.log(data));
   
     while (!orderStorage[orderNum]) {
@@ -19,4 +17,5 @@ var frcHeaders = new Headers({
     }
   }
 
-  getFRCData(frcApiRoot + "/v2.0/:season", 1);
+//   getFRCData(frcApiRoot + "/v2.0/2021", 1);
+//FIX LATER

@@ -27,16 +27,19 @@ async function getClosestCompData(teamNum, mainOrderNum) {
   }
 
   var difference = (new Date(closestComp.start_date).getTime() - testDate.getTime()) / (1000 * 60 * 60 * 24);
-
   orderStorage[mainOrderNum] = [closestComp, difference];
 }
 
-async function getCurMatchNum(eventKey, mainOrderNum) {
+async function getCurMatch(eventKey, mainOrderNum) {
   var orderNum = curOrderNum++;
   await getTBAData(tbaApiRoot + "event/" + eventKey + "/matches", orderNum);
-  var matches = getOrder(orderNum);
+  var tempMatches = getOrder(orderNum);
+  var matches = [];
 
-  var curMatch = 1;
+  ["qm", "ef", "qf", "sf", "f"].forEach(level => {
+    matches = matches.concat(tempMatches.filter(x => x.comp_level == level).sort((a, b) => a.match_number - b.match_number));
+  });
+
   matches = matches.map(x => {
     if (x.match_number > finishedMatches) {
       x.actual_time = null;
@@ -45,11 +48,14 @@ async function getCurMatchNum(eventKey, mainOrderNum) {
     return x;
   });
 
-  matches.forEach(x => {
-    if (x.actual_time != null && x.comp_level == "qm") {
+  var curMatch = 0;
+  for (var i = 0; i < matches.length; i++) {
+    if (matches[i].actual_time != null) {
       curMatch++;
+    } else {
+      break;
     }
-  });
-
-  orderStorage[mainOrderNum] = curMatch;
+  }
+  
+  orderStorage[mainOrderNum] = matches[curMatch];
 }

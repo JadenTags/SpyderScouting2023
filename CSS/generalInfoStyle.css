@@ -1,0 +1,37 @@
+#compAddress, #compWeek {
+    margin: 0;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#compWeek {
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+#compDates {
+    margin: 30px;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+#compWebsite {
+    width: 100vw;
+}
+
+.matchesDisplayTable {
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0 15px;
+    width: 80%;
+}
+
+.matchesTableCell {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
