@@ -12,7 +12,7 @@ function activateButtons() {
       if (navButton.id.replace("Button", "Div") != div) {
         buttonOnclick += "hideElement('" + div + "');";
       } else {
-        buttonOnclick += "toggleElement('" + div + "', 'block'); if (document.getElementById('" + div + "').style.display == 'none') {showElement('titleDiv', 'block');} else {hideElement('titleDiv', 'block');};";
+        buttonOnclick += "toggleElement('" + div + "', 'block'); if (document.getElementById('" + div + "').style.display == 'none') {showElement('titleDiv', 'block');} else {hideElement('titleDiv', 'block');};document.body.scrollTop = 0;document.documentElement.scrollTop = 0;";
       }
     });
 
@@ -67,35 +67,6 @@ function toggleButton(buttonId, buttonClass) {
     
     button.setAttribute("class", buttonClasses.split(" ").slice(1).join(" "));
   }
-}
-
-function navButtonFunction(divId, divIds) {
-  var showTitle = true;
-  hideElement("titleDiv");
-  
-  divIds.forEach(divId => {
-    hideElement(divId);
-  });
-
-  toggleElement(divId, "inline");
-
-  divIds.push(divId);
-  
-  divIds.forEach(divId => {
-    if (document.getElementById(divId).style.display != "none") {
-      showTitle = false;
-    }
-  });
-
-  if (showTitle) {
-    document.getElementById("titleDiv").style.display = "inline";
-    document.getElementsByTagName("body")[0].setAttribute("class", "noscroll");
-  } else {
-    document.getElementsByTagName("body")[0].setAttribute("class", "");
-  }
-
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
 
 activateButtons();

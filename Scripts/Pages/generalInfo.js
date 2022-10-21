@@ -39,7 +39,7 @@ async function fillMatches() {
             t.setAttribute("class", "matchesDisplayTable center");
             body.id = formatDateString(time);
             title.setAttribute("class", "title");
-            tr.innerHTML = "<th>#</th><th>Time</th><th>Blue 1</th><th>Blue 2</th><th>Blue 3</th><th>Red 1</th><th>Red 2</th><th> Red 3</th><th>Winner</th>"
+            tr.innerHTML = "<th></th><th class='matchesHeader'>#</th><th class='matchesHeader'>Time</th><th class='matchesHeader'>1</th><th class='matchesHeader'>2</th><th class='matchesHeader'>3</th><th class='matchesHeader'>1</th><th class='matchesHeader'>2</th><th class='matchesHeader'>3</th><th class='matchesHeader'>Winner</th>"
 
             title.appendChild(document.createTextNode(formatDateString(time)));
             document.getElementById("matchesDiv").appendChild(title);
@@ -53,15 +53,26 @@ async function fillMatches() {
         let blueAlliance = match.alliances.blue.team_keys.map(x => x.substring(3));
         let redAlliance = match.alliances.red.team_keys.map(x => x.substring(3));
 
+        let arrowData = document.createElement("td");
+        let arrowImg = document.createElement("img");
+
+        arrowImg.src = "../../Images/matchesPointer.png";
+        arrowImg.style.height = "35px";
+
+        arrowData.appendChild(arrowImg);
+        arrowImg.style.display = "none";
+        arrowImg.id = match.match_number + match.comp_level + match.set_number + "Matches#";
+        tr.appendChild(arrowData);
+
+        if (match.match_number == curMatch.match_number && match.set_number == curMatch.set_number && match.comp_level == curMatch.comp_level) {
+            curMatchId = arrowImg.id;
+            arrowImg.style.display = "initial";
+        }
+
         let matchNum = createNewTD(match.match_number);
         matchNum.id = match.match_number + match.comp_level + match.set_number + "Matches#";
         matchNum.style.fontWeight = "bolder";
         matchNum.style.height = "40px";
-
-        if (match.match_number == curMatch.match_number && match.set_number == curMatch.set_number && match.comp_level == curMatch.comp_level) {
-            curMatchId = matchNum.id;
-            matchNum.style.backgroundColor = "black";
-        }
 
         matchNum.setAttribute("class", "matchesTableCell");
         tr.appendChild(matchNum);
@@ -82,7 +93,8 @@ async function fillMatches() {
                 }
 
                 if (team == "1622") {
-                    teamNode.style.backgroundColor = "white";
+                    teamNode.style.backgroundColor = "black";
+                    teamNode.style.color = "white";
                 }
 
                 teamNode.setAttribute("class", "matchesTableCell");
@@ -93,16 +105,16 @@ async function fillMatches() {
         });
 
         let winningAlliance = createNewTD(match.winning_alliance);
+        if (match.winning_alliance == "blue") {
+            winningAlliance.style.backgroundColor = "#9dc1e0";
+        } else if (match.winning_alliance == "red") {
+            winningAlliance.style.backgroundColor = "#e3a3ac";
+        }
+        
         winningAlliance.setAttribute("class", "matchesTableCell");
         tr.appendChild(winningAlliance);
-
-        // console.log(formatDateString(time), convertMilitaryTime(time.toTimeString().substring(0, 5)))
-        // console.log(match)
-
         body.appendChild(tr);
     });
-
-    //Match num, red alliance, blue alliance, winner and arrow on left side pointing at cur match
 }
 
 async function periodicCheckMatchesMatch() {
@@ -117,8 +129,8 @@ async function periodicCheckMatchesMatch() {
         let tempMatchId = match.match_number + match.comp_level + match.set_number + "Matches#";
 
         if (tempMatchId != curMatchId) {
-            document.getElementById(curMatchId).style.backgroundColor = "white";
-            document.getElementById(tempMatchId).style.backgroundColor = "black";
+            document.getElementById(curMatchId).style.display = "none";
+            document.getElementById(tempMatchId).style.display = "initial";
             curMatchId = tempMatchId;
         }
     }
